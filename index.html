@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waterdeep: Dragon Heist • Campaign Wiki</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { font-family: 'Georgia', serif; }
+    .fantasy-header { font-family: 'Cinzel', serif; }
+    .parchment { background: #f5e8c7; color: #3f2a1e; }
+    .gold-glow { text-shadow: 0 0 15px #d4af37; }
+  </style>
+</head>
+<body class="bg-[#0a1428] text-[#f5e8c7] min-h-screen flex">
+  <!-- SIDEBAR -->
+  <div class="w-72 bg-[#111827] border-r border-[#d4af37]/30 flex flex-col">
+    <div class="p-6 border-b border-[#d4af37]/30">
+      <h1 class="fantasy-header text-3xl font-bold text-[#d4af37] gold-glow tracking-widest">WATERDEEP</h1>
+      <p class="text-xs uppercase tracking-[3px] text-[#d4af37]/70 mt-1">Dragon Heist • Homebrew</p>
+    </div>
+
+    <nav class="flex-1 p-4 space-y-1">
+      <a onclick="loadSection('home')" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#1f2937] cursor-pointer text-lg"><i class="fa-solid fa-home w-5"></i> Home</a>
+      <a onclick="loadSection('pcs')" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#1f2937] cursor-pointer text-lg"><i class="fa-solid fa-users w-5"></i> Player Characters</a>
+      <a onclick="loadSection('npcs')" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#1f2937] cursor-pointer text-lg"><i class="fa-solid fa-user-secret w-5"></i> NPCs</a>
+      <a onclick="loadSection('locations')" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#1f2937] cursor-pointer text-lg"><i class="fa-solid fa-map-marker-alt w-5"></i> Locations</a>
+      <a onclick="loadSection('events')" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#1f2937] cursor-pointer text-lg"><i class="fa-solid fa-calendar w-5"></i> Events</a>
+      <a onclick="loadSection('lore')" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#1f2937] cursor-pointer text-lg"><i class="fa-solid fa-book w-5"></i> Lore</a>
+      <a onclick="loadSection('plotpoints')" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#1f2937] cursor-pointer text-lg"><i class="fa-solid fa-scroll w-5"></i> Plot Points</a>
+    </nav>
+
+    <div class="p-6 text-xs text-[#d4af37]/50 border-t border-[#d4af37]/30">
+      Updated live via GitHub Pages • Pure HTML/JS
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="flex-1 flex flex-col">
+    <!-- TOP BAR -->
+    <header class="bg-[#111827] border-b border-[#d4af37]/30 p-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <input id="searchInput" 
+               onkeyup="if(event.key==='Enter') globalSearch()" 
+               type="text" 
+               placeholder="Search the city..." 
+               class="bg-[#1f2937] border border-[#d4af37]/30 focus:border-[#d4af37] rounded-full px-6 py-2 w-96 outline-none text-[#f5e8c7]">
+      </div>
+      <div class="flex items-center gap-2 text-[#d4af37]">
+        <i class="fa-solid fa-dragon text-2xl"></i>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA -->
+    <main id="content" class="flex-1 p-8 overflow-auto">
+      <!-- JS will fill this -->
+    </main>
+  </div>
+
+  <!-- DETAIL MODAL -->
+  <div id="modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+    <div class="bg-[#1f2937] w-full max-w-3xl mx-4 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="flex justify-between items-center px-6 py-4 border-b border-[#d4af37]/30">
+        <h2 id="modalTitle" class="fantasy-header text-2xl text-[#d4af37]"></h2>
+        <button onclick="closeModal()" class="text-3xl hover:text-[#d4af37]">×</button>
+      </div>
+      <div id="modalContent" class="p-8 prose prose-invert max-w-none text-[#f5e8c7] leading-relaxed">
+        <!-- Markdown rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
