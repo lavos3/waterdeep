@@ -1,22 +1,29 @@
 // ==================== CONFIG ====================
 const categories = {
   pcs: [
-    { slug: "example-pc", name: "Example PC", short: "Your first player character" }
+    { slug: "thalor",      name: "Thalor",      short: "Player character – background, class, key traits" },
+    { slug: "madrugal",    name: "Madrugal",    short: "Player character – background, class, key traits" }
   ],
   npcs: [
-    { slug: "example-npc", name: "Example NPC", short: "A shady Waterdeep contact" }
+    { slug: "floon",       name: "Floon",       short: "Missing artist / plot hook victim" },
+    { slug: "mirt",        name: "Mirt the Moneylender", short: "Wealthy retired adventurer, possible ally" },
+    { slug: "renear",      name: "Renaer Neverember", short: "Dagult's estranged son, rebel figure" },
+    { slug: "volo",        name: "Volo",        short: "Famous (and unreliable) chronicler & guide" }
   ],
   locations: [
-    { slug: "example-location", name: "Example Location", short: "A key spot in the city" }
+    { slug: "trollskull-manor", name: "Trollskull Manor", short: "The party's tavern / home base in Trollskull Alley" },
+    { slug: "waterdeep",        name: "Waterdeep",        short: "The City of Splendors – overview & wards" },
+    { slug: "yawning-portal",   name: "Yawning Portal",   short: "Famous inn & entrance to Undermountain" }
   ],
   events: [
-    { slug: "example-event", name: "Example Event", short: "Session highlight" }
+    { slug: "events",           name: "Session Summaries & Major Events", short: "Overview of important happenings (or move individual sessions here later)" }
   ],
   lore: [
-    { slug: "example-lore", name: "Example Lore", short: "Background knowledge" }
+    { slug: "lore",             name: "General Lore & World Information", short: "Gods, factions, history, secrets of Waterdeep" }
   ],
   plotpoints: [
-    { slug: "example-plot", name: "Example Plot Point", short: "Major revelation" }
+    // Currently empty – add entries like this when you create files:
+    // { slug: "vault-keys-revealed", name: "The Vault Keys Revealed", short: "Major discovery about the Stone of Golorr" },
   ]
 };
 
